@@ -10,4 +10,4 @@ keywords = ["hyprland", "yambar", "wayland"]
 
 [dependencies]
 anyhow = "1.0.72"
-hyprland = "0.4.0-alpha.2"
+hyprland = "0.4.0-beta.2"

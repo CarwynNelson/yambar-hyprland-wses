@@ -103,7 +103,7 @@ fn main() -> anyhow::Result<()> {
     // And re-report whenever anything of interest may have changed.
     let mut event_listener = EventListener::new();
     let txx = tx.clone();
-    event_listener.add_workspace_change_handler(move |_| {
+    event_listener.add_workspace_changed_handler(move |_| {
         let _ = txx.send(());
     });
     let txx = tx.clone();
@@ -111,11 +111,11 @@ fn main() -> anyhow::Result<()> {
         let _ = txx.send(());
     });
     let txx = tx.clone();
-    event_listener.add_window_open_handler(move |_| {
+    event_listener.add_window_opened_handler(move |_| {
         let _ = txx.send(());
     });
     let txx = tx.clone();
-    event_listener.add_window_close_handler(move |_| {
+    event_listener.add_window_closed_handler(move |_| {
         let _ = txx.send(());
     });
 
